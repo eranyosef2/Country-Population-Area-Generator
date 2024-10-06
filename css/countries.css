@@ -64,6 +64,7 @@ h1 {
 #countryPopulation, #countryArea {
     font-size: 1.2em;
     color: #555;
+    top:50px
 }
 
 input, button {
