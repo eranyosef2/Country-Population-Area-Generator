@@ -8,13 +8,16 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/countries.css">
         
-        <title>countries</title>
+        <title>Countries</title>
     </head>
     <body>
         <h1>Countries</h1>
 
+        <input type="text" id="countryInput" placeholder="Enter country name">
+        <button id="fetchBtn">Fetch Country Info</button>
+        <pre id="countryData"></pre>
+
         <script src="lib/axios.js"></script>
-        
         <script src="js/country.controller.js"></script>
     </body>
 </html>
