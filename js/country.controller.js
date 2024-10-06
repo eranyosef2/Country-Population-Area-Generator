@@ -20,9 +20,19 @@ function onGetCountryInfo() {
 }
 
 function renderInfo(data) {
-    console.log('Rendering...')
-    const preTag = document.getElementById('countryData')
-    preTag.textContent = JSON.stringify(data, null, 2)
+    const countryNameElem = document.getElementById('countryName')
+    const countryFlagElem = document.getElementById('countryFlag')
+    const countryPopulationElem = document.getElementById('countryPopulation')
+    const countryAreaElem = document.getElementById('countryArea')
+
+
+    countryNameElem.textContent = data.name.common
+    countryFlagElem.src = data.flags.png
+    countryFlagElem.alt = `Flag of ${data.name.common}`
+     countryFlagElem.style.display = 'block'
+    countryPopulationElem.textContent = `Population: ${data.population.toLocaleString()}`
+    countryAreaElem.textContent = `Area: ${data.area.toLocaleString()} km²`
 }
+
 
 document.getElementById('fetchBtn').addEventListener('click', onGetCountryInfo)

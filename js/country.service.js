@@ -8,12 +8,19 @@ function getCountryByName(name) {
         return Promise.resolve(cache[name])
     }
 
-    return axios.get(`https://restcountries.com/v3.1/name/${name}`)
+    return axios.get('https://restcountries.com/v3.1/all')
         .then(response => {
-            const countryData = response.data[0]
-            cache[name] = countryData
-            saveCache(cache)
-            return countryData
+            const countryData = response.data.find(
+                country => country.name.common.toLowerCase() === name.toLowerCase()
+            )
+
+            if (countryData) {
+                cache[name] = countryData
+                saveCache(cache)
+                return countryData
+            } else {
+                throw new Error('Country not found')
+            }
         })
 }
 
