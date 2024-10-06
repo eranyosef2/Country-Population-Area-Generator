@@ -10,7 +10,7 @@ function onGetCountryInfo() {
         return
     }
 
-    axios.get(`https://restcountries.com/v3.1/name/${countryName}`)
+    getCountryByName(countryName)
         .then(response => {
             renderInfo(response.data[0])
         })
