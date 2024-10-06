@@ -11,8 +11,8 @@ function onGetCountryInfo() {
     }
 
     getCountryByName(countryName)
-        .then(response => {
-            renderInfo(response.data[0])
+        .then(countryData => {
+            renderInfo(countryData)
         })
         .catch(error => {
             preTag.textContent = "Error fetching country data!"
