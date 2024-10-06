@@ -1,3 +1,85 @@
 #countryFlag {
     display: none;
 }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #b8b9b9, #2193b0);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3em;
+    color: #fff;
+    background: linear-gradient(45deg, #f093fb, #f5576c, #4facfe, #00f2fe);
+    background-size: 400% 400%;
+    animation: colorShift 5s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+@keyframes colorShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.country-info {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#countryName {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+#countryFlag {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    display: none; 
+}
+
+#countryPopulation, #countryArea {
+    font-size: 1.2em;
+    color: #555;
+}
+
+input, button {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+}
+
+button {
+    background-color: #2193b0;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1b7b8b;
+}
